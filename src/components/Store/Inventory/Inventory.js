@@ -14,6 +14,7 @@ const Inventory = props => {
           key={key}
           onEditFish={props.onEditFish}
           index={key}
+          onDeleteFish={props.onDeleteFish}
           fish={props.fishes[key]}
         />
       ))}
@@ -27,7 +28,8 @@ Inventory.propType = {
   onAddFish: PropType.func.isRequired,
   onSampleFishes: PropType.func.isRequired,
   onEditFish: PropType.func.isRequired,
-  fishes: PropType.object.isRequired
+  fishes: PropType.object.isRequired,
+  onDeleteFish: PropType.func.isRequired
 };
 
 export default Inventory;

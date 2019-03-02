@@ -44,6 +44,9 @@ const EditFishForm = props => {
         placeholder="Image"
         value={image}
       />
+      <button onClick={() => props.onDeleteFish(props.index)}>
+        Remove Fish
+      </button>
     </div>
   );
 };
@@ -57,7 +60,8 @@ EditFishForm.propType = {
     image: PropType.string.isRequired
   }),
   index: PropType.number.isRequired,
-  onEditFish: PropType.func.isRequired
+  onEditFish: PropType.func.isRequired,
+  onDeleteFish: PropType.func.isRequired
 };
 
 export default EditFishForm;

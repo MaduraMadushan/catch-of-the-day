@@ -24,6 +24,12 @@ class Store extends Component {
     this.setState({ fishes });
   };
 
+  handleDeleteFish = id => {
+    const fishes = { ...this.state.fishes };
+    delete fishes[id];
+    this.setState({ fishes });
+  };
+
   handleSampleFishes = () => {
     this.setState({ fishes: sampleFishes });
   };
@@ -64,6 +70,7 @@ class Store extends Component {
           onAddFish={this.handleAddFish}
           onSampleFishes={this.handleSampleFishes}
           onEditFish={this.handleEditFish}
+          onDeleteFish={this.handleDeleteFish}
           fishes={this.state.fishes}
         />
       </div>
