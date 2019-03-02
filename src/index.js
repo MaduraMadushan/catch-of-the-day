@@ -1,14 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+import StorePicker from "./components/StorePicker/StorePicker";
+import Store from "./components/Store/Store";
+import NotFound from "./components/NotFound";
 
 import "./styles.css";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={StorePicker} />
+        <Route path="/store/:id" component={Store} />
+        <Route component={NotFound} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
