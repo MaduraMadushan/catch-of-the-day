@@ -9,7 +9,7 @@ class Store extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header tagline="Freash Seafood Market" />
         <Fish />
         <Order />
         <Inventory />
