@@ -33,10 +33,10 @@ const Order = props => {
     return prevTotal;
   }, 0);
   return (
-    <div>
+    <div className="order-wrap">
       <h2>Order</h2>
       <ul>{orderIds.map(renderOrder)}</ul>
-      <div>
+      <div className="total">
         <strong>{formatPrice(total)}</strong>
       </div>
     </div>

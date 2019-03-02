@@ -6,7 +6,7 @@ import StorePicker from "./components/StorePicker/StorePicker";
 import Store from "./components/Store/Store";
 import NotFound from "./components/NotFound";
 
-import "./styles.css";
+import "./css/style.css";
 
 function App() {
   return (

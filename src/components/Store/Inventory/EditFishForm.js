@@ -11,7 +11,7 @@ const EditFishForm = props => {
   };
   const { name, price, status, desc, image } = props.fish;
   return (
-    <div>
+    <div className="fish-edit">
       <input
         type="text"
         name="name"

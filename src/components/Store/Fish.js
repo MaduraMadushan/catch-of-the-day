@@ -7,10 +7,10 @@ const Fish = props => {
   const { name, price, status, desc, image } = props.fishes;
   const isAvailable = status === "available";
   return (
-    <li>
+    <li className="menu-fish">
       <img src={image} alt={name} />
-      <h3>
-        {name} <span>{formatPrice(price)}</span>
+      <h3 className="fish-name">
+        {name} <span className="price">{formatPrice(price)}</span>
       </h3>
       <p>{desc}</p>
       <button

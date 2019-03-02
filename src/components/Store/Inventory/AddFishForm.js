@@ -21,7 +21,7 @@ const AddFishForm = props => {
     event.currentTarget.reset();
   };
   return (
-    <form onSubmit={handleCreateFish}>
+    <form className="fish-edit" onSubmit={handleCreateFish}>
       <input type="text" name="name" placeholder="Name" ref={nameRef} />
       <input type="text" name="price" placeholder="Price" ref={priceRef} />
       <select name="status" ref={statusRef}>

@@ -48,18 +48,20 @@ class Store extends Component {
 
   render() {
     return (
-      <div>
-        <Header tagline="Freash Seafood Market" />
-        <ul>
-          {Object.keys(this.state.fishes).map(key => (
-            <Fish
-              key={key}
-              fishes={this.state.fishes[key]}
-              onAddToOrder={this.handleAddToOrder}
-              index={key}
-            />
-          ))}
-        </ul>
+      <div className="catch-of-the-day">
+        <div className="menu">
+          <Header tagline="Freash Seafood Market" />
+          <ul className="fishes">
+            {Object.keys(this.state.fishes).map(key => (
+              <Fish
+                key={key}
+                fishes={this.state.fishes[key]}
+                onAddToOrder={this.handleAddToOrder}
+                index={key}
+              />
+            ))}
+          </ul>
+        </div>
 
         <Order
           order={this.state.order}

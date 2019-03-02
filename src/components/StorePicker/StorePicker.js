@@ -9,7 +9,7 @@ const StorePicker = props => {
     props.history.push(`/store/${storeName}`);
   };
   return (
-    <form onSubmit={goToStore}>
+    <form className="store-selector" onSubmit={goToStore}>
       <h2>Please Enter A Store</h2>
       <input
         type="text"

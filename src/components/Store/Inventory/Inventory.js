@@ -6,7 +6,7 @@ import EditFishForm from "./EditFishForm";
 
 const Inventory = props => {
   return (
-    <div>
+    <div className="inventory">
       <h2>Inventory!!!</h2>
       <AddFishForm onAddFish={props.onAddFish} />
       {Object.keys(props.fishes).map(key => (
