@@ -5,6 +5,7 @@ import { formatPrice } from "./../../utils/helpers";
 
 const Fish = props => {
   const { name, price, status, desc, image } = props.fishes;
+  const isAvailable = status === "available";
   return (
     <li>
       <img src={image} alt={name} />
@@ -12,6 +13,12 @@ const Fish = props => {
         {name} <span>{formatPrice(price)}</span>
       </h3>
       <p>{desc}</p>
+      <button
+        onClick={() => props.onAddToOrder(props.index)}
+        disabled={!isAvailable}
+      >
+        {isAvailable ? "Add To Order" : "Sold Out!"}
+      </button>
     </li>
   );
 };
@@ -23,7 +30,9 @@ Fish.propType = {
     status: PropType.string.isRequired,
     desc: PropType.string.isRequired,
     image: PropType.string.isRequired
-  })
+  }),
+  index: PropType.number.isRequired,
+  onAddToOrder: PropType.func.isRequired
 };
 
 export default Fish;

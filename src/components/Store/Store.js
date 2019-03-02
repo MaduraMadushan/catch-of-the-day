@@ -22,17 +22,38 @@ class Store extends Component {
     this.setState({ fishes: sampleFishes });
   };
 
+  handleAddToOrder = id => {
+    const order = { ...this.state.order };
+    order[id] = order[id] + 1 || 1;
+    this.setState({ order });
+  };
+
+  handleRemoveOrder = id => {
+    const order = { ...this.state.order };
+    delete order[id];
+    this.setState({ order });
+  };
+
   render() {
     return (
       <div>
         <Header tagline="Freash Seafood Market" />
         <ul>
           {Object.keys(this.state.fishes).map(key => (
-            <Fish key={key} fishes={this.state.fishes[key]} />
+            <Fish
+              key={key}
+              fishes={this.state.fishes[key]}
+              onAddToOrder={this.handleAddToOrder}
+              index={key}
+            />
           ))}
         </ul>
 
-        <Order />
+        <Order
+          order={this.state.order}
+          fishes={this.state.fishes}
+          onRemoveOrder={this.handleRemoveOrder}
+        />
         <Inventory
           onAddFish={this.handleAddFish}
           onSampleFishes={this.handleSampleFishes}
