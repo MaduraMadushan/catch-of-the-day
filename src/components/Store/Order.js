@@ -1,5 +1,6 @@
 import React from "react";
 import { formatPrice } from "./../../utils/helpers";
+import PropType from "prop-types";
 
 const Order = props => {
   const renderOrder = key => {
@@ -40,6 +41,17 @@ const Order = props => {
       </div>
     </div>
   );
+};
+
+Order.propType = {
+  fishes: PropType.shape({
+    name: PropType.string.isRequired,
+    price: PropType.number.isRequired,
+    status: PropType.string.isRequired,
+    desc: PropType.string.isRequired,
+    image: PropType.string.isRequired
+  }),
+  order: PropType.object.isRequired
 };
 
 export default Order;

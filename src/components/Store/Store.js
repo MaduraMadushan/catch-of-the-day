@@ -18,6 +18,12 @@ class Store extends Component {
     this.setState({ fishes });
   };
 
+  handleEditFish = (id, updatedfish) => {
+    const fishes = { ...this.state.fishes };
+    fishes[id] = updatedfish;
+    this.setState({ fishes });
+  };
+
   handleSampleFishes = () => {
     this.setState({ fishes: sampleFishes });
   };
@@ -57,6 +63,8 @@ class Store extends Component {
         <Inventory
           onAddFish={this.handleAddFish}
           onSampleFishes={this.handleSampleFishes}
+          onEditFish={this.handleEditFish}
+          fishes={this.state.fishes}
         />
       </div>
     );
