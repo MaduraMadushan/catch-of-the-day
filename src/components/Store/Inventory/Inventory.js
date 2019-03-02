@@ -8,12 +8,14 @@ const Inventory = props => {
     <div>
       <h2>Inventory!!!</h2>
       <AddFishForm onAddFish={props.onAddFish} />
+      <button onClick={props.onSampleFishes}>Load Sample Fish</button>
     </div>
   );
 };
 
 Inventory.propType = {
-  onAddFish: PropType.func.isRequired
+  onAddFish: PropType.func.isRequired,
+  onSampleFishes: PropType.func.isRequired
 };
 
 export default Inventory;

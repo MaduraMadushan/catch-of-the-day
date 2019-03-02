@@ -4,6 +4,7 @@ import Header from "./Header";
 import Fish from "./Fish";
 import Order from "./Order";
 import Inventory from "./Inventory/Inventory";
+import sampleFishes from "./../../utils/sample-fishes";
 
 class Store extends Component {
   state = {
@@ -17,6 +18,10 @@ class Store extends Component {
     this.setState({ fishes });
   };
 
+  handleSampleFishes = () => {
+    this.setState({ fishes: sampleFishes });
+  };
+
   render() {
     return (
       <div>
@@ -28,7 +33,10 @@ class Store extends Component {
         </ul>
 
         <Order />
-        <Inventory onAddFish={this.handleAddFish} />
+        <Inventory
+          onAddFish={this.handleAddFish}
+          onSampleFishes={this.handleSampleFishes}
+        />
       </div>
     );
   }
